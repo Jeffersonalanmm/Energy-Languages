@@ -10,13 +10,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.gnat-4.gnat_run 21" Ada binary-trees
+	sudo ../../RAPL/main "./binarytrees.gnat-4.gnat_run 2" Ada binary-trees
 
 run:
-	./binarytrees.gnat-4.gnat_run 21
+	./binarytrees.gnat-4.gnat_run 2
 
 mem:
-	/usr/bin/time -v ./binarytrees.gnat-4.gnat_run 21
+	/usr/bin/time -v ./binarytrees.gnat-4.gnat_run 2
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.gnat-4.gnat_run 21
+	valgrind --tool=massif --stacks=yes ./binarytrees.gnat-4.gnat_run 2

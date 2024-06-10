@@ -12,13 +12,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.gnat-5.gnat_run 25000000" Ada fasta
+	sudo ../../RAPL/main "./fasta.gnat-5.gnat_run 25" Ada fasta
 
 run:
-	./fasta.gnat-5.gnat_run 25000000
+	./fasta.gnat-5.gnat_run 25
 
 mem:
-	/usr/bin/time -v ./fasta.gnat-5.gnat_run 25000000
+	/usr/bin/time -v ./fasta.gnat-5.gnat_run 25
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.gnat-5.gnat_run 25000000
+	valgrind --tool=massif --stacks=yes ./fasta.gnat-5.gnat_run 25

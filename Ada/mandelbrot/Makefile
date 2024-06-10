@@ -6,13 +6,13 @@ compile:
 	gnatlink-6 mandelbrot.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o mandelbrot.gnat-3.gnat_run
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.gnat-3.gnat_run 16000" Ada mandelbrot
+	sudo ../../RAPL/main "./mandelbrot.gnat-3.gnat_run 16" Ada mandelbrot
 
 run:
-	./mandelbrot.gnat-3.gnat_run 16000
+	./mandelbrot.gnat-3.gnat_run 16
 
 mem:
-	/usr/bin/time -v ./mandelbrot.gnat-3.gnat_run 16000
+	/usr/bin/time -v ./mandelbrot.gnat-3.gnat_run 16
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./mandelbrot.gnat-3.gnat_run 16000
+	valgrind --tool=massif --stacks=yes ./mandelbrot.gnat-3.gnat_run 16

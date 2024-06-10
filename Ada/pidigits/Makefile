@@ -7,13 +7,13 @@ compile:
 	gnatlink-6 pidigits.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o pidigits.gnat-2.gnat_run
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.gnat-2.gnat_run 10000" Ada pidigits
+	sudo ../../RAPL/main "./pidigits.gnat-2.gnat_run 10" Ada pidigits
 
 run:
-	./pidigits.gnat-2.gnat_run 10000
+	./pidigits.gnat-2.gnat_run 10
 	
 mem:
-	/usr/bin/time -v  ./pidigits.gnat-2.gnat_run 10000
+	/usr/bin/time -v  ./pidigits.gnat-2.gnat_run 10
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  ./pidigits.gnat-2.gnat_run 10000
+	valgrind --tool=massif --stacks=yes  ./pidigits.gnat-2.gnat_run 10

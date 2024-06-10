@@ -7,13 +7,13 @@ compile:
 
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.gnat-3.gnat_run 12" Ada fannkuch-redux
+	sudo ../../RAPL/main "./fannkuchredux.gnat-3.gnat_run 2" Ada fannkuch-redux
 
 run:
-	./fannkuchredux.gnat-3.gnat_run 12
+	./fannkuchredux.gnat-3.gnat_run 2
 
 mem:
-	/usr/bin/time -v  ./fannkuchredux.gnat-3.gnat_run 12
+	/usr/bin/time -v  ./fannkuchredux.gnat-3.gnat_run 2
 
 valgrind:
-	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gnat-3.gnat_run 12
+	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gnat-3.gnat_run 2

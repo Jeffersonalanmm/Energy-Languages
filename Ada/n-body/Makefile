@@ -9,13 +9,13 @@ compile:
 	gnatlink-6 nbody.ali -O3 -fomit-frame-pointer -march=native -msse3 -mfpmath=sse -o nbody.gnat-2.gnat_run
 measure:
 	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.gnat-2.gnat_run 50000000" Ada n-body
+	sudo ../../RAPL/main "./nbody.gnat-2.gnat_run 5" Ada n-body
 
 run:
-	./nbody.gnat-2.gnat_run 50000000
+	./nbody.gnat-2.gnat_run 5
 	
 mem:
-	/usr/bin/time -v ./nbody.gnat-2.gnat_run 50000000
+	/usr/bin/time -v ./nbody.gnat-2.gnat_run 5
 
 valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.gnat-2.gnat_run 50000000
+	valgrind --tool=massif --stacks=yes ./nbody.gnat-2.gnat_run 5
